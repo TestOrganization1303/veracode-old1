@@ -3,7 +3,7 @@ veracode_static_scan:
   # pull request event. Specifying both will only execute push event.
   # Leaving them both false means this will never run
   push:
-    trigger: true
+    trigger: false
     # Please only specify either branches_to_run or branches_to_exclude
     # Entering both will only execute branches_to_run
     # Leaving them both blank means this will never run
@@ -11,7 +11,7 @@ veracode_static_scan:
       - '*'
     branches_to_exclude:
   pull_request:
-    trigger: false
+    trigger: true
     action:
       - opened
       - synchronize
@@ -21,7 +21,7 @@ veracode_static_scan:
   # By selecting a branch here - Veracode will save your last scan result
   # As an App Profile - given the current name of your scanned repo
   # Use 'none' if you would not like any scans saved to the platform
-  analysis_branch: master
+  analysis_branch: main
   analysis_on_platform: false
   break_build_policy_findings: true
   filter_mitigated_flaws: true
